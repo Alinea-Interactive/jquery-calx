@@ -8994,7 +8994,7 @@ cell.fx.checkCircularReference = function(address){
         for(a in this.dependencies){
             //console.log(prefix+'cell: '+this.getAddress()+', dependencies of dependency: '+a+', is circular: '+isCircular);
 
-            isCircular = isCircular || this.dependencies[a].checkCircularReference(address);
+            isCircular = isCircular || (!this.dependencies[a].remoteDependency && this.dependencies[a].checkCircularReference(address));
             if(isCircular){
                 return true;
             }
