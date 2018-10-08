@@ -3537,8 +3537,8 @@ date: {
         for (var i = 0; i < range.length; i++) {
             var fit = true;
             for (var j = 0; j < criteria; j++) {
-                var criteria_clause = arguments[2 * j + 1];
-                var criteria_range  = utility.objectToArray(arguments[2 * j + 2]);
+                var criteria_clause = arguments[2 * j + 2];
+                var criteria_range  = utility.objectToArray(arguments[2 * j + 1]);
 
                 if (fit) {
                     fit = this.evaluate(criteria_range[i] + criteria_clause);
