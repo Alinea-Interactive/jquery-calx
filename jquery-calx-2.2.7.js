@@ -9266,7 +9266,7 @@ sheet.fx.checkCircularReference = function(){
         };
 
     for(a in this.cells){
-        response.isCircular = this.cells[a].checkCircularReference();
+        response.isCircular = (!this.cells[a].remoteDependency && this.cells[a].checkCircularReference());
         if(true === response.isCircular){
             response.cell = this.cells[a];
             return response;
